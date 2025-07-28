@@ -97,6 +97,6 @@ SimpleLogger.clearLogFiles()
 
 
 ## 添加 ProGuard 混淆规则
--keep class lj.sword.simplelogger.SimpleLogger { public *; }
--keep class lj.sword.simplelogger.LoggerConfig { *; }
--keep class lj.sword.simplelogger.LogLevel { public *; }
+- -keep class lj.sword.simplelogger.SimpleLogger { public *; }
+- -keep class lj.sword.simplelogger.LoggerConfig { *; }
+- -keep class lj.sword.simplelogger.LogLevel { public *; }
