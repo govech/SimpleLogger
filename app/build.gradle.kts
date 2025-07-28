@@ -33,10 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
-
+    implementation(project(":simplelogger"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
