@@ -8,6 +8,19 @@
     - 生产就绪：完善的异常处理和线程安全机制
 
 ## 集成
+
+在根目录的 settings.gradle 中添加：
+
+```groovy
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
 在 app 模块的 build.gradle 中添加依赖：
 ```groovy
 dependencies {
