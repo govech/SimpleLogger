@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+group = "com.github.govech"
+version = "1.0.0"
+
 android {
     namespace = "lj.sword.simplelogger"
     compileSdk = 35
