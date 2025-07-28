@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Logtest"
 include(":app")
+include(":simplelogger")
