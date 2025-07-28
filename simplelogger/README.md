@@ -10,7 +10,7 @@ dependencies {
 
 ## 初始化（在 Application 中）
 
-### 方法一：简洁版初始化（推荐）
+### 方法一：简洁版初始化
 ```kotlin
 class MyApp : Application() {
     override fun onCreate() {
@@ -43,6 +43,27 @@ class MyApp : Application() {
         SimpleLogger.initialize(this, config)
     }
 }
+```
+
+### 方法三：自定义文件日志配置
+```kotlin
+
+val fileConfig = FileLogConfig(
+    maxFileSizeBytes = 5 * 1024 * 1024, // 5MB
+    maxFileCount = 10,
+    batchSize = 20,
+    enableAsyncLogging = true,
+    useTimestampInFilename = true
+)
+
+val loggerConfig = LoggerConfig(
+    logLevel = LogLevel.INFO,
+    globalTag = "MyApp",
+    enableFileLogging = true,
+    fileLogConfig = fileConfig
+)
+
+SimpleLogger.initialize(this, loggerConfig)
 ```
 
 ## 基本用法

@@ -35,7 +35,7 @@ android {
 dependencies {
     // 无额外依赖，保持轻量
 
-//    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.ktx)
 //    implementation(libs.androidx.appcompat)
 //    implementation(libs.material)
 //    testImplementation(libs.junit)
