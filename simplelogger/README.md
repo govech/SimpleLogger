@@ -66,3 +66,9 @@ SimpleLogger.clearLogFiles()
 
 ## 日志文件
 日志文件存储在外部存储的 `Android/data/your.package.name/files/simple_logger/` 目录
+
+
+## 添加 ProGuard 混淆规则
+-keep class lj.sword.simplelogger.SimpleLogger { public *; }
+-keep class lj.sword.simplelogger.LoggerConfig { *; }
+-keep class lj.sword.simplelogger.LogLevel { public *; }
