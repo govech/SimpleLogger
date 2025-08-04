@@ -24,7 +24,7 @@ dependencyResolutionManagement {
 在 app 模块的 build.gradle 中添加依赖：
 ```groovy
 dependencies {
-    implementation 'lj.sword:simplelogger:1.0.0'
+    implementation 'com.github.govech:simplelogger:1.0.0'
 }
 ```
 
