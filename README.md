@@ -1,4 +1,4 @@
-# SimpleLogger SDK 使用指南
+# SimpleLogger SDK 使用指南 ![](https://jitpack.io/v/govech/simplelogger.svg)
 
 ## 概述
     SimpleLogger: 是一款专为 Android 平台设计的轻量级日志记录工具库，提供 多级别日志输出、灵活配置和可扩展的日志存储能力。核心设计理念是：
