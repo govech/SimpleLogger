@@ -24,7 +24,7 @@ object SimpleLogger {
 
         // 初始化文件日志管理器
         if (config.enableFileLogging) {
-            initializeFileManager(context)
+            initializeFileManager(AppContextProvider.applicationContext)
         }
 
         // 首次初始化日志
@@ -119,6 +119,8 @@ object SimpleLogger {
     // 核心日志方法
     @Synchronized
     private fun log(level: LogLevel, customTag: String?, message: String) {
+        //先检查一遍是否在Application初始化，如果没有则直接报错
+        AppContextProvider.applicationContext
         // 检查是否启用日志
         if (!config.isEnabled || level.value < config.logLevel.value) {
             return
