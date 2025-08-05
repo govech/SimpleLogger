@@ -80,9 +80,9 @@ object SimpleLogger {
             oldConfig.fileLogConfig != newConfig.fileLogConfig) {
 
             val context = AppContextProvider.applicationContext
-            if (context != null && newConfig.enableFileLogging) {
+            if (newConfig.enableFileLogging) {
                 initializeFileManager(context)
-            } else if (!newConfig.enableFileLogging) {
+            } else  {
                 fileManager?.release()
                 fileManager = null
             }
@@ -167,7 +167,7 @@ object SimpleLogger {
                 }
             } else {
                 // 降级处理：使用简单的文件写入
-                val context = AppContextProvider.applicationContext ?: return
+                val context = AppContextProvider.applicationContext
                 LogFileManager.getInstance(context, config.fileLogConfig)
                     .appendLog(message)
             }
@@ -187,7 +187,7 @@ object SimpleLogger {
     fun clearLogFiles() {
         try {
             fileManager?.clearLogs() ?: run {
-                val context = AppContextProvider.applicationContext ?: return
+                val context = AppContextProvider.applicationContext
                 LogFileManager.getInstance(context, config.fileLogConfig).clearLogs()
             }
             i("Log files cleared")
@@ -202,7 +202,7 @@ object SimpleLogger {
     fun getLogFiles(): List<java.io.File> {
         return try {
             fileManager?.getLogFiles() ?: run {
-                val context = AppContextProvider.applicationContext ?: return emptyList()
+                val context = AppContextProvider.applicationContext
                 LogFileManager.getInstance(context, config.fileLogConfig).getLogFiles()
             }
         } catch (e: Exception) {
@@ -217,7 +217,7 @@ object SimpleLogger {
     fun getLogDirectorySize(): Long {
         return try {
             fileManager?.getLogDirectorySize() ?: run {
-                val context = AppContextProvider.applicationContext ?: return 0L
+                val context = AppContextProvider.applicationContext
                 LogFileManager.getInstance(context, config.fileLogConfig).getLogDirectorySize()
             }
         } catch (e: Exception) {
